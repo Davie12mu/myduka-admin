@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Duka{% endblock %}
+
+{% block content %}
+<style>
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="index-image" style="margin-top: 20px; height: 75%">
+      <img src="/static/images/small-shopping-cart-blue-background.webp" alt="Snow" style="width: 100%" />
+    </div>
+    <div class="centered">
+      <div class="index-image-text">
+        <h1 style="font-size: 30px; color: black">
+          Welcome To My Duka
+        </h1>
+        <p style="color: black">Manage Products, Sales and Customers</p>
+        <a class="btn btn-primary" href="/admin/dashboard" role="button">Start Now</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#example").DataTable();
+  });
+
+</script>
+
+{% endblock %}
+

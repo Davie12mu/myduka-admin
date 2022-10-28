@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Duka - Inventories{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-4">
+        <div class="list-group">
+            <a href="/admin/dashboard" class="list-group-item list-group-item-action" aria-current="true">Dashboard</a>
+            <a href="/admin/inventories" class="list-group-item list-group-item-action">Inventories</a>
+            <a href="/admin/sales" class="list-group-item list-group-item-action active">Sales</a>
+        </div>
+    </div>
+    <div class="col-7">
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">View Sales</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- for loop. You can also use if -->
+                {% for i in rows %}
+                <tr>
+                    <td>{{i[3]}}</td>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td> <a href="/sales/{{ i[0] }}"> View Sales </a> </td>
+                </tr>
+                <!-- must end forloop -->
+                {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}
